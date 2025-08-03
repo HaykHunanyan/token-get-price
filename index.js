@@ -38,7 +38,6 @@ const chatId = process.env.TELEGRAM_CHAT_ID;
       if (msg.channel === 'push.deal' && msg.symbol === 'COS_USDT') {
         const trade = msg.data;
         if(trade.p > 0.004){
-            console.log(`🚀 Цена выше 0.004: ${trade.p}`);
             const message = `🚨 Объёмный всплеск на ${msg.symbol}
             Сигнал: <b>🚀 Цена выше 0.004: ${trade.p}</b>
             <a href="https://www.mexc.com/en-GB/exchange/${msg.symbol}">Открыть ${msg.symbol}</a>`;

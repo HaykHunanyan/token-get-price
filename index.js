@@ -37,7 +37,6 @@ const chatId = process.env.TELEGRAM_CHAT_ID;
       const msg = await JSON.parse(data);
       if (msg.channel === 'push.deal' && msg.symbol === 'COS_USDT') {
         const trade = msg.data;
-        console.log(`💰 COS/USDT Futures: ${trade.p} | Объём: ${trade.v} | Тип: ${trade.T === 1 ? 'BUY' : 'SELL'}`);
         if(trade.p > 0.004){
             console.log(`🚀 Цена выше 0.004: ${trade.p}`);
             const message = `🚨 Объёмный всплеск на ${msg.symbol}

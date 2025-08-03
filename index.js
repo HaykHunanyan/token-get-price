@@ -5,8 +5,8 @@ const axios = require('axios');
 const TelegramBot = require('node-telegram-bot-api');
 require('dotenv').config();
 
-const bot = new TelegramBot("6849642721:AAF1lWoLLdRF5KobcU8SrUR1ZUin9crFNCg", { polling: false });
-const chatId = "@bittestbit";
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+const chatId = process.env.TELEGRAM_CHAT_ID;
 
 (async () => {
   const res = await axios.get('https://contract.mexc.com/api/v1/contract/detail');

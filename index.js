@@ -62,7 +62,7 @@ async function fetchMyxPrice() {
     const resp = await axios.get('https://api.mexc.com/api/v3/ticker/price', {
       params: { symbol: 'MYXUSDT' }
     });
-    const pr = 1.5
+    const pr = 0.8
     if(resp.data.price < pr) {
       const message = `🚨 Объёмный всплеск на ${resp.data.symbol}
       Сигнал: <b>🚀 Цена nije ${pr}: ${resp.data.price}</b>
